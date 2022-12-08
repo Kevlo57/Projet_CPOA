@@ -1,12 +1,24 @@
+/**
+* @file compte.h
+* @brief Fichier de déclaration de la classe compte
+* @date 07/12/2022
+* @author SLIMANI | TATOGLU | LODOVICI
+* @version 1.0
+*/
+
 #ifndef COMPTE_H
 #define COMPTE_H
 
-
+/**
+* @class compte
+* @brief Classe representant un compte
+* @date 07/12/2022
+*/
 class Compte
 {
 protected:
-    char* identifiant;
-    int* mot_de_passe;
+    char* identifiant;  //!< L'identifiant du compte
+    int* mot_de_passe;  //!< Le mot de passe du compte
 public:
     Compte();
     ~Compte();

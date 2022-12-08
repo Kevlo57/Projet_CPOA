@@ -24,6 +24,7 @@ SOURCES += \
 HEADERS += \
     administrateur.h \
     categorie.h \
+    categorie.h \
     client.h \
     compte.h \
     easyticket.h \
