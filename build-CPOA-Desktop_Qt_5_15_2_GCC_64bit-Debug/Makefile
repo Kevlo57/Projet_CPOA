@@ -285,7 +285,6 @@ DIST          = ../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/lex.prf \
 		../CPOA/CPOA.pro ../CPOA/administrateur.h \
-		categorie.h \
 		../CPOA/client.h \
 		../CPOA/compte.h \
 		../CPOA/easyticket.h \
@@ -754,7 +753,6 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CPOA/administrateur.h categorie.h ../CPOA/client.h ../CPOA/compte.h ../CPOA/easyticket.h ../CPOA/ingenieur.h ../CPOA/mainwindow.h ../CPOA/personne.h ../CPOA/technicien.h ../CPOA/ticket.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../CPOA/administrateur.cpp ../CPOA/client.cpp ../CPOA/compte.cpp ../CPOA/easyticket.cpp ../CPOA/ingenieur.cpp ../CPOA/main.cpp ../CPOA/mainwindow.cpp ../CPOA/personne.cpp ../CPOA/technicien.cpp ../CPOA/ticket.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CPOA/mainwindow.ui $(DISTDIR)/
 
@@ -939,8 +937,7 @@ compte.o: ../CPOA/compte.cpp ../CPOA/compte.h
 easyticket.o: ../CPOA/easyticket.cpp ../CPOA/easyticket.h \
 		../CPOA/personne.h \
 		../CPOA/compte.h \
-		../CPOA/ticket.h \
-		../CPOA/categorie.cpp
+		../CPOA/ticket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o easyticket.o ../CPOA/easyticket.cpp
 
 ingenieur.o: ../CPOA/ingenieur.cpp ../CPOA/ingenieur.h \
@@ -953,7 +950,6 @@ main.o: ../CPOA/main.cpp ../CPOA/client.h \
 		../CPOA/compte.h \
 		../CPOA/easyticket.h \
 		../CPOA/ticket.h \
-		../CPOA/categorie.cpp \
 		../CPOA/mainwindow.h \
 		../../../Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1219,8 +1215,7 @@ technicien.o: ../CPOA/technicien.cpp ../CPOA/technicien.h \
 		../CPOA/compte.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o technicien.o ../CPOA/technicien.cpp
 
-ticket.o: ../CPOA/ticket.cpp ../CPOA/ticket.h \
-		../CPOA/categorie.cpp
+ticket.o: ../CPOA/ticket.cpp ../CPOA/ticket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ticket.o ../CPOA/ticket.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
